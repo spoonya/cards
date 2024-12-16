@@ -1,3 +1,3 @@
 export const API = {
-  APPEALS: "/appeals",
+  APPEALS: "appeals.json",
 };

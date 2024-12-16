@@ -1,50 +1,71 @@
-# React + TypeScript + Vite
+## Необходимые условия
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Перед началом работы убедитесь, что на вашем компьютере установлены:
 
-Currently, two official plugins are available:
+- [Node.js](https://nodejs.org/) (рекомендуется версия 16 или выше)
+- [npm](https://www.npmjs.com/) (устанавливается вместе с Node.js)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Запуск проекта
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. Клонирование репозитория
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone <repository-url>
+cd cards
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Установка зависимостей
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Запустите команду для установки всех зависимостей проекта:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm install
+```
+
+### 3. Запуск сервера разработки
+
+Запустите сервер разработки с помощью команды:
+
+```bash
+npm run dev
+```
+
+Локальный сервер будет доступен по адресу `http://localhost:5173`.
+
+---
+
+## Изменение значений для тестирования
+
+Для тестирования поведения можно изменить значения полей в файле `appeals.json`, который находится в папке `public/data`.
+
+1. Откройте файл:
+   ```plaintext
+   public/data/appeals.json
+   ```
+2. Внесите необходимые изменения в значения полей (например, текст или структуру данных).
+3. Сохраните файл.
+4. Перезапустите сервер разработки, если это требуется, и проверьте результат в браузере.
+
+---
+
+## Сборка проекта
+
+### Создание продакшн-сборки
+
+Для создания продакшн-сборки выполните команду:
+
+```bash
+npm run build
+```
+
+Собранные файлы будут находиться в папке `dist/`.
+
+### Предпросмотр сборки
+
+Для предпросмотра продакшн-сборки локально используйте:
+
+```bash
+npm run preview
 ```
