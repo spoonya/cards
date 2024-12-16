@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 *,
 *::after,
 *::before {
@@ -12,7 +14,9 @@ html {
 
 body {
   font-size: 1.6rem;
-  font-family: "Roboto", sans-serif;
+  font-family: $ff-primary;
+
+  background-color: $cl-light-beta;
 }
 
 button {
@@ -34,4 +38,11 @@ button {
   &:focus {
     outline: 0;
   }
+}
+
+.list-reset {
+  list-style-type: none;
+
+  padding: 0;
+  margin: 0;
 }

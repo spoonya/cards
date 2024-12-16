@@ -1,3 +1,172 @@
+@use "../../styles/variables" as *;
+
 .root {
-  max-width: 32.8rem;
+  border-radius: 1.6rem;
+
+  background-color: $cl-light-alpha;
+}
+
+.inProgress {
+  background-color: $cl-spec-alpha;
+}
+
+.overdue {
+  background-color: $cl-spec-beta;
+}
+
+.feedback {
+  background-color: $cl-spec-psi;
+}
+
+.completed {
+  background-color: $cl-spec-gamma;
+}
+
+.number {
+  display: inline-block;
+
+  padding: 1rem 1.6rem;
+
+  margin-right: 0.8rem;
+
+  border-radius: 1.6rem 0 1.6rem 0;
+
+  color: $cl-light-alpha;
+  font-weight: 500;
+}
+
+.header {
+  margin-bottom: 0.8rem;
+}
+
+.content {
+  padding: 0 1.6rem 1.6rem;
+}
+
+.status {
+  color: $cl-dark-gamma;
+  font-weight: 500;
+}
+
+.item {
+  display: inline-flex;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.label {
+  font-size: 1.4rem;
+  color: $cl-dark-beta;
+  font-weight: 400;
+
+  min-width: 8.1rem;
+
+  margin-right: 1.6rem;
+}
+
+.value {
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.hr {
+  margin: 0.8rem 0;
+
+  width: 100%;
+  height: 0.1rem;
+
+  border: 0;
+  background: $cl-light-gamma;
+}
+
+.description {
+  position: relative;
+
+  font-size: 1.4rem;
+  color: $cl-dark-beta;
+
+  transition: max-height 0.4s ease, margin-bottom 0.2s ease;
+
+  p {
+    margin: 0;
+  }
+
+  &::after {
+    content: "";
+
+    position: absolute;
+
+    bottom: -1.5rem;
+    left: 0;
+    right: 0;
+
+    height: 6rem;
+
+    background: linear-gradient(
+      to bottom,
+      rgba($cl-light-alpha, 0),
+      $cl-light-alpha
+    );
+    pointer-events: none;
+  }
+
+  &.collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    max-height: 4.8rem;
+  }
+
+  &.expanded {
+    margin-bottom: 2.6rem;
+
+    max-height: 50rem;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.toggleTextButton {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+
+  font-size: 1.6rem;
+  color: $cl-spec-omega;
+  font-weight: 500;
+
+  margin: 0 auto;
+
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &.active {
+    .arrow {
+      transform: scale(-1, -1);
+    }
+  }
+}
+
+.arrow {
+  fill: $cl-spec-omega;
+
+  width: 2.4rem;
+  height: 2.4rem;
+
+  transition: transform 0.2s ease;
 }

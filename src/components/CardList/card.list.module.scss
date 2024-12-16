@@ -1,7 +1,14 @@
 .root {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 328px));
+  justify-content: center;
+  align-items: flex-start;
   grid-gap: 2.4rem;
 
-  padding: 2rem;
+  padding: 4rem 2rem;
+
+  max-width: 144rem;
+  width: 100%;
+
+  margin: 0 auto;
 }

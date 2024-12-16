@@ -10,7 +10,7 @@ export const getAppeals = async () => {
     return response.data;
   } catch (error: any) {
     console.error(
-      "Error fetching:",
+      "Fetching error:",
       error.response?.data?.message || "Something went wrong"
     );
   }
